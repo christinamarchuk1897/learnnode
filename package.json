@@ -1,0 +1,19 @@
+{
+  "name": "typeorm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinamarchuk1897/typeorm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinamarchuk1897/typeorm/issues"
+  },
+  "homepage": "https://github.com/christinamarchuk1897/typeorm#readme"
+}
