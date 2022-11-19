@@ -51,7 +51,7 @@ class UserController {
                     password: requestData.hash
                 });
 
-                // newUser.save();
+                newUser.save();
 
                 return res.status(200).json({
                     succes: true,
