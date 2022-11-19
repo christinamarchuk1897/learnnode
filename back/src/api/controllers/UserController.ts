@@ -3,11 +3,19 @@ import { Repository } from  'typeorm';
 import connection from "../../../db_connection";
 import User from '../models/User'
 import bcrypt from 'bcryptjs';
+import { validationResult } from 'express-validator';
+
 
 class UserController {
     constructor() {};
 
-    public async create(req: Request, res: Response) {
+    public async create(req: Request, res: Response):Promise<any>{
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
         const {
             firstName,
             lastName,
@@ -43,12 +51,14 @@ class UserController {
                     password: requestData.hash
                 });
 
-                newUser.save();
+                // newUser.save();
 
                 return res.status(200).json({
+                    succes: true,
                     msg: 'User has been succesfully created',
                     data: newUser
                 });
+
             } else {
                 return res.status(200).json("User has already created");
             }

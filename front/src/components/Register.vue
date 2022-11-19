@@ -18,11 +18,16 @@
             <input v-model="form.password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input v-model="form.repeatPass" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            <input v-model="form.passwordConfirmation" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
             <hr>
 
             <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
             <button @click="register" class="registerbtn">Register</button>
+        </div>
+        <div class="error" v-if="errors && errors.length">
+          <p v-for="(err, i) in errors" :key="i">
+            {{err.msg}} {{err.param}}
+          </p>
         </div>
 
         <div class="container signin">
@@ -39,16 +44,20 @@ export default {
                 lastName: '',
                 email: '',
                 password: '',
-                repeatPass: ''
-            }
+                passwordConfirmation: ''
+            },
+            errors: null
         }
     },
     methods: {
-      register() {
-        const res = this.axios.post('/register', {
-          data: this.form
-        })
-        console.log(res);
+      async register() {
+        await this.axios.post('http://localhost:8000/register', {
+          ...this.form
+        }).then((res) => {
+          if(res.data.succes) {
+            this.$router.push('/login');
+          }
+        }).catch((err)=> this.errors = err.response.data.errors);
       }
     }
 }
@@ -112,5 +121,11 @@ a {
 .container {
     max-width: 50%;
     margin: 0  auto;
+}
+
+.error {
+  p {
+    color: red;
+  }
 }
 </style>
