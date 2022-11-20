@@ -18,6 +18,8 @@ const router = createRouter({
     routes, // short for `routes: routes`
   })
 
+
+axios.defaults.baseURL = 'http://localhost:8000'
 const app = createApp({});
 app.use(router);
 app.use(VueAxios, axios)

@@ -62,7 +62,7 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 * {box-sizing: border-box}
 
 /* Add padding to containers */
