@@ -38,8 +38,9 @@ class App {
     }
 
     private async init() {
-        await this.app.listen(8000, () => {
-            console.log(`⚡️ Server is running at https://localhost:8000`);
+        const port = process.env.PORT;
+        await this.app.listen(port, () => {
+            console.log(`⚡️ Server is running at ${port}`);
         });
     }
 }
