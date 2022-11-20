@@ -8,6 +8,10 @@
             <input v-model="form.password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
             <button @click="login" class="registerbtn">Login</button>
+
+            <div class="container signin">
+            <p><router-link to="/register">Register</router-link></p>
+        </div>
     </div>
 </template>
 
@@ -23,7 +27,11 @@ export default {
     },
     methods: {
         async login() {
-            await this.axios.get('/products')
+            const res = await this.axios.post('/login', this.form);
+            if (res.data.user && res.data.token) {
+                localStorage.setItem('token', res.data.token)
+                this.$router.push('/home');
+            }
         }
     }
 }

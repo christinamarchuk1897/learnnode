@@ -5,6 +5,7 @@ import User from '../models/User'
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv';
+import { validationResult } from 'express-validator';
 dotenv.config();
 const JWT_KEY = process.env.JWT_TOKEN || '12345';
 class LoginController {
@@ -14,8 +15,11 @@ class LoginController {
         return res.status(200).json('WORKS!')
     }
 
-    public async login(req: Request, res: Response) {
-
+    public async login(req: Request, res: Response):Promise<any>  {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
         const repo: Repository<User> = connection.getRepository(User);
         const {
             email,
@@ -36,10 +40,11 @@ class LoginController {
                     }, JWT_KEY  , {
                         expiresIn: '1h'
                     });
-                    req.headers.authorization = 'Bearer ' + token
-                    res.send(user);
+                    // user.token = token;
+                    res.header('Authorization', [token])
+                    res.send({user, token});
                 } else {
-                    return res.status(200).json('Auth failed');
+                    return res.status(404).json('Auth failed');
                 }
             })
         } else {
