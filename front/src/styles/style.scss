@@ -6,56 +6,38 @@
     color: #2c3e50;
 }
 
+
+$color: #140f07;
+$color-2:#132c53;
+$color-3:#4661b5;
+$color-4:#90a1fb;
+$color-5:#f4eaf5;
+
+.color1 {color: #120907;}
+.color2 {color: #19203c;}
+.color3 {color: #4e5f95;}
+.color4 {color: #84a0e5;}
+.color5 {color: #b7dfeb;}
+
+.color1 {color: #d9d8ff;}
+.color2 {color: #ffffff;}
+.color3 {color: #161934;}
+.color4 {color: #77767c;}
+.color5 {color: #e2e2e2;}
+
 * {box-sizing: border-box}
 
 body {
     margin: 0 auto;
+    background-color: #e2e2e2;
 }
 
-.container {
-  padding: 16px;
+h1, h2, h3, h4, h5, p, span, section, div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-.registerbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity:1;
-}
-
-a {
-  color: dodgerblue;
-}
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
 
 .container {
     max-width: 50%;
@@ -66,4 +48,35 @@ a {
   p {
     color: red;
   }
+}
+
+button {
+  background-color: #4e5f95;
+  color: #f4eaf5;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  input {
+    margin: 15px 0;
+    height: 45px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #84a0e5;
+    background-color: #f4eaf5;
+  }
+}
+
+.registerbtn {
+  margin-top: 20px;
+}
+
+.signin {
+  margin-top: 40px;
 }

@@ -1,12 +1,17 @@
 <template>
     <section>
-        Home
+        <Header/>
+        <slot/>
+        <Sidebar/>
     </section>
 </template>
 <script>
-// import Layout from './layouts/BaseLayout.vue'
+import Header from '../base/Header.vue';
+import Sidebar from '../base/Sidebar.vue';
 export default {
     components: {
+        Header,
+        Sidebar
     },
     async mounted() {
         await this.axios.get('/products')

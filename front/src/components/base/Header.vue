@@ -20,11 +20,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import './../../styles/style.scss';
  .header {
-    min-height: 70px;
+    height: 100px;
     display: flex;
     align-items: center;
     padding: 20px;
+    background-color: #19203c;
  }
  .logout {
     margin-left: auto;

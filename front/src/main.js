@@ -2,9 +2,10 @@ import { createApp } from 'vue/dist/vue.esm-bundler'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import router from './router/index'
+import App from './App.vue';
 
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 axios.interceptors.request.use(
   request => {
@@ -21,7 +22,7 @@ axios.interceptors.request.use(
 );
 
 
-const app = createApp({});
+const app = createApp(App);
 app.use(router);
 app.use(VueAxios, axios)
-app.mount('#app')
+app.mount('#app');

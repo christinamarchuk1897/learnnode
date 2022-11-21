@@ -3,25 +3,32 @@
         <div class="container">
             <h1>Register</h1>
             <p>Please fill in this form to create an account.</p>
-            <hr>
 
-            <label for="firstname"><b>First name</b></label>
-            <input v-model="form.firstName" type="text" placeholder="Enter First name" name="firstname" id="firstname" required>
+            <div class="input-group">
+              <label for="firstname"><b>First name</b></label>
+              <input v-model="form.firstName" type="text" placeholder="Enter First name" name="firstname" id="firstname" required>
+            </div>
 
-            <label for="lastname"><b>Last name</b></label>
-            <input v-model="form.lastName" type="text" placeholder="Enter Last name" name="lastname" id="lastname" required>
+            <div class="input-group">
+              <label for="lastname"><b>Last name</b></label>
+              <input v-model="form.lastName" type="text" placeholder="Enter Last name" name="lastname" id="lastname" required>
+            </div>
+            
+            <div class="input-group">
+              <label for="email"><b>Email</b></label>
+              <input v-model="form.email" type="text" placeholder="Enter Email" name="email" id="email" required>
+            </div>
 
-            <label for="email"><b>Email</b></label>
-            <input v-model="form.email" type="text" placeholder="Enter Email" name="email" id="email" required>
+            <div class="input-group">
+  
+              <label for="psw"><b>Password</b></label>
+              <input v-model="form.password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            </div>
+            <div class="input-group">
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input v-model="form.passwordConfirmation" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            </div>
 
-            <label for="psw"><b>Password</b></label>
-            <input v-model="form.password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input v-model="form.passwordConfirmation" type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-            <hr>
-
-            <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
             <button @click="register" class="registerbtn">Register</button>
         </div>
         <div class="error" v-if="errors && errors.length">
@@ -63,5 +70,5 @@ export default {
 }
 </script>
 <style lang="scss">
-
+@import './../styles/style.scss';
 </style>
