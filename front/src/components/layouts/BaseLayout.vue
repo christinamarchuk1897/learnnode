@@ -14,7 +14,7 @@ export default {
         Sidebar
     },
     async mounted() {
-        await this.axios.get('/products')
+       // await this.axios.get('/products')
     }
 }
 </script>

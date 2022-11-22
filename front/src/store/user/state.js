@@ -1,3 +1,5 @@
-export default {
-    user: {}
-}
+export default () => ({
+    user: {
+        some: 'some'
+    }
+})
