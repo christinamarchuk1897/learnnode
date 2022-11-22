@@ -5,7 +5,7 @@ enum RoleTypes {
     admin = "ADMIN"
 }
 
-@Entity('user')
+@Entity('users')
 export default class User extends BaseEntity {
 
     @PrimaryGeneratedColumn()

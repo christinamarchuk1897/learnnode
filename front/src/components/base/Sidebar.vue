@@ -1,12 +1,14 @@
 <template>
     <aside class="sidebar">
-        <router-link to="/products">Products</router-link>
+        <router-link to="/my-products">My Products</router-link>
+        <router-link to="/admin/products">Products</router-link>
+        <router-link to="/admin/categories">Categories</router-link>
     </aside>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 <style lang="scss">
@@ -18,5 +20,10 @@ export default {
     height: 100%;
     padding: 20px;
     background-color: #4e5f95;
+    display: flex;
+    flex-direction: column;
+    a {
+        margin-bottom: 25px;
+    }
 }
 </style>

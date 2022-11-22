@@ -8,8 +8,8 @@
 export default {
     components: {
     },
-    async mounted() {
-        await this.axios.get('/products')
-    }
+    // async mounted() {
+    //     await this.axios.get('/products')
+    // }
 }
 </script>

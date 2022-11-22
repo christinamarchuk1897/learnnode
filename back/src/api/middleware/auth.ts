@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const verifyToken = (req: Request, res: Response, next: NextFunction) => {
-    console.log(req);
     const token: string | string[] | undefined = req.headers["authorization"];
     const configToken = process.env.JWT_TOKEN
     if (!token) {

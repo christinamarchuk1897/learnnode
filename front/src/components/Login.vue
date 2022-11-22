@@ -15,7 +15,9 @@
         <button @click="login" class="registerbtn">Login</button>
 
         <div class="container signin">
-            <router-link to="/register">Register</router-link>
+            <button>
+                <router-link to="/register">Register</router-link>
+            </button>
         </div>
     </div>
 </template>
@@ -32,11 +34,7 @@ export default {
     },
     methods: {
         async login() {
-            const res = await this.axios.post('/login', this.form);
-            if (res.data.user && res.data.token) {
-                localStorage.setItem('token', res.data.token)
-                this.$router.push('/home');
-            }
+            this.$store.dispatch('login', this.form)
         }
     }
 }

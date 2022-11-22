@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/christinamarchuk1897/typeorm/issues"
   },
-  "homepage": "https://github.com/christinamarchuk1897/typeorm#readme"
+  "homepage": "https://github.com/christinamarchuk1897/typeorm#readme",
+  "dependencies": {
+    "vuex": "^4.0.2"
+  }
 }

@@ -32,7 +32,7 @@ body {
     background-color: #e2e2e2;
 }
 
-h1, h2, h3, h4, h5, p, span, section, div {
+h1, h2, h3, h4, h5, p, span, section, div, a {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
@@ -71,6 +71,11 @@ button {
     border: 1px solid #84a0e5;
     background-color: #f4eaf5;
   }
+}
+
+a {
+  color: #e2e2e2;
+  text-decoration: none;
 }
 
 .registerbtn {
