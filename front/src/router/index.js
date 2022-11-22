@@ -6,7 +6,7 @@ import Home from '../components/Home.vue';
 import Products from '../components/Products.vue';
 import AdminProducts from '../components/product/Products.vue'
 const routes = [
-    { path: '/', component: App },
+    // { path: '/', component: App },
     { path: '/login', component: Login, name: "login" },
     { path: '/register', component: Register, name: "register" },
     { path: '/home', component: Home, meta: {layout: "BaseLayout"}},
@@ -18,5 +18,6 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 })
+
 
 export default router;

@@ -4,8 +4,8 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-    mounted() {
-       console.log(this.$store.getters['getUser'])
+    async mounted() {
+        await this.axios.get('/products')
     },
 
     computed: {

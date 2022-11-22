@@ -6,12 +6,13 @@ import store from './store/store'
 import App from './App.vue';
 
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:8000';
 
 axios.interceptors.request.use(
   request => {
     if (localStorage.getItem('token')) {
       request.headers['Authorization'] = localStorage.getItem('token');
+      request.headers['x-access'] = JSON.parse(localStorage.getItem('user')).default_role === 'ADMIN' ? true : false;
     } else {
       router.push('/login');
     }
@@ -24,7 +25,10 @@ axios.interceptors.request.use(
 
 
 const app = createApp(App);
+
+
 app.use(router);
+
 app.use(VueAxios, axios)
 app.use(store);
 app.mount('#app');
