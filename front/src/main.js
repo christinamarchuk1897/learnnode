@@ -12,7 +12,7 @@ axios.interceptors.request.use(
   request => {
     if (localStorage.getItem('token')) {
       request.headers['Authorization'] = localStorage.getItem('token');
-      request.headers['x-access'] = JSON.parse(localStorage.getItem('user')).default_role === 'ADMIN' ? true : false;
+      request.params = { has_access : JSON.parse(localStorage.getItem('user')).default_role === 'ADMIN' ? 1 : 0};
     } else {
       router.push('/login');
     }

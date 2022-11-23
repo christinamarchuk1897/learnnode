@@ -4,19 +4,33 @@ import Login from '../components/Login.vue';
 import Register from '../components/Register.vue';
 import Home from '../components/Home.vue';
 import Products from '../components/Products.vue';
-import AdminProducts from '../components/product/Products.vue'
+import AdminProducts from '../components/admin/product/Products.vue'
+
+const rolePermission = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).default_role == 'ADMIN'
+console.log()
 const routes = [
     // { path: '/', component: App },
     { path: '/login', component: Login, name: "login" },
     { path: '/register', component: Register, name: "register" },
-    { path: '/home', component: Home, meta: {layout: "BaseLayout"}},
+    { path: '/home', component: Home, meta: {layout: "BaseLayout"}, name: 'home'},
     { path: '/products', component: Products, meta: { layout: "BaseLayout" } },
-    { path: '/admin/products', component: AdminProducts, meta: { layout: 'BaseLayout'}}
+    { path: '/admin/products', component: AdminProducts, meta: { layout: 'BaseLayout', admin: true}}
 ]
 const router = createRouter({
     mode: 'history',
     history: createWebHashHistory(),
     routes,
+})
+
+router.beforeEach((to, from, next) => {
+    console.log(to);
+    if (to.meta['admin'] && JSON.parse(localStorage.getItem('user')).default_role !== "ADMIN") {
+        next({
+            name: 'home'
+        })
+    } else {
+        next()
+    }
 })
 
 

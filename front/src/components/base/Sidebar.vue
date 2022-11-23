@@ -4,7 +4,7 @@
 
         <template v-if="role">
             <router-link to="/admin/products">Products</router-link>
-            <router-link to="/admin/categories">Categories</router-link>\
+            <router-link to="/admin/categories">Categories</router-link>
         </template>
     </aside>
 </template>
@@ -13,7 +13,7 @@
 export default {
     computed: {
         role() {
-            return JSON.parse(localStorage.getItem('user')).default_role === 'ADMIN';
+            return JSON.parse(localStorage.getItem('user')) && JSON.parse(localStorage.getItem('user')).default_role === 'ADMIN';
         }
     }
 }

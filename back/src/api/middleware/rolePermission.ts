@@ -4,11 +4,11 @@ import User from '../models/User';
 import { Repository } from  'typeorm';
 
 const verifyToken = async (req: Request, res: Response, next: NextFunction) => {
-    const repo: Repository<User> = connection.getRepository(User);
-    const created = await repo.findOne( { where:
-        { email: req.user.email }
-    });
-    console.log(created);
+    if (req.query['has_access'] == '1') {
+        next();
+    } else {
+        res.status(403).json({message: 'Forbiden'})
+    }
 };
 
 export default verifyToken;
