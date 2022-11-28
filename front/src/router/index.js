@@ -6,7 +6,7 @@ import Home from '../components/Home.vue';
 import Products from '../components/Products.vue';
 import AdminProducts from '../components/admin/product/Products.vue'
 import CreateProduct from '../components/admin/product/Create.vue'
-import AdminCategories from '../components/admin/categories/Products.vue'
+import AdminCategories from '../components/admin/categories/Categories.vue'
 import CreateCategory from '../components/admin/categories/Create.vue'
 
 const rolePermission = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).default_role == 'ADMIN'
@@ -18,7 +18,7 @@ const routes = [
     { path: '/home', component: Home, meta: {layout: "BaseLayout"}, name: 'home'},
     { path: '/products', component: Products, meta: { layout: "BaseLayout" } },
     { path: '/admin/products', component: AdminProducts, meta: { layout: 'BaseLayout', admin: true}},
-    { path: '/admin/products/create', component: CreateProduct, meta: { layout: 'BaseLayout', admin: true}}
+    { path: '/admin/products/create', component: CreateProduct, meta: { layout: 'BaseLayout', admin: true}},
     { path: '/admin/categories', component: AdminCategories, meta: { layout: 'BaseLayout', admin: true}},
     { path: '/admin/categories/create', component: CreateCategory, meta: { layout: 'BaseLayout', admin: true}}
 ]
