@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link :to="'/admin/create'">
+        <router-link :to="'/admin/products/create'">
             <button>Create</button>
         </router-link>
         <div>
