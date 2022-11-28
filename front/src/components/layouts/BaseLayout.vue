@@ -1,7 +1,9 @@
 <template>
     <section>
         <Header/>
-        <slot/>
+        <div class="container">
+            <slot/>
+        </div>
         <Sidebar/>
     </section>
 </template>

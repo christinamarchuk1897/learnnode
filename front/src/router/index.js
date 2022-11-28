@@ -5,6 +5,7 @@ import Register from '../components/Register.vue';
 import Home from '../components/Home.vue';
 import Products from '../components/Products.vue';
 import AdminProducts from '../components/admin/product/Products.vue'
+import Create from '../components/admin/product/Create.vue'
 
 const rolePermission = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).default_role == 'ADMIN'
 console.log()
@@ -14,7 +15,8 @@ const routes = [
     { path: '/register', component: Register, name: "register" },
     { path: '/home', component: Home, meta: {layout: "BaseLayout"}, name: 'home'},
     { path: '/products', component: Products, meta: { layout: "BaseLayout" } },
-    { path: '/admin/products', component: AdminProducts, meta: { layout: 'BaseLayout', admin: true}}
+    { path: '/admin/products', component: AdminProducts, meta: { layout: 'BaseLayout', admin: true}},
+    { path: '/admin/create', component: Create, meta: { layout: 'BaseLayout', admin: true}}
 ]
 const router = createRouter({
     mode: 'history',

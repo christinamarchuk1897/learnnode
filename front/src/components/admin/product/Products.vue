@@ -1,5 +1,12 @@
 <template>
-    <h1>Admin Products Table</h1>
+    <div>
+        <router-link :to="'/admin/create'">
+            <button>Create</button>
+        </router-link>
+        <div>
+            <h1>Admin Products Table</h1>
+        </div>
+    </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'

@@ -1,23 +1,21 @@
 <template>
     <div class="container mt-5">
-        <h1>Login</h1>
+        <div class="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input v-model="form.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input  v-model="form.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
 
-        <div class="input-group">
-            <label for="email"><b>Email</b></label>
-            <input v-model="form.email" type="text" placeholder="Enter Email" name="email" id="email" required>
-        </div>
-
-        <div class="input-group">
-            <label for="psw"><b>Password</b></label>
-            <input v-model="form.password" type="password" placeholder="Enter Password" name="psw" id="psw" required>
-        </div>
-
-        <button @click="login" class="registerbtn">Login</button>
-
-        <div class="container signin">
-            <button>
-                <router-link to="/register">Register</router-link>
-            </button>
+            <div class="actions d-flex flex-column">
+                <button @click="login">Login</button>
+                <button >
+                    <router-link to="/register">Register</router-link>
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -39,3 +37,12 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+    .actions {
+        margin-top: 20px;
+    }
+    .form {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+</style>

@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/christinamarchuk1897/typeorm#readme",
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
+    "bootstrap-vue-3": "^0.4.10",
+    "vue": "^3.2.45",
     "vuex": "^4.0.2"
   }
 }

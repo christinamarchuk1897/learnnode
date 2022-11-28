@@ -4,7 +4,8 @@ import VueAxios from 'vue-axios'
 import router from './router/index'
 import store from './store/store'
 import App from './App.vue';
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
 
 axios.defaults.baseURL = 'http://localhost:8000';
 
@@ -31,4 +32,6 @@ app.use(router);
 
 app.use(VueAxios, axios)
 app.use(store);
+// app.use(BootstrapVue);
+// app.use(IconsPlugin);
 app.mount('#app');
