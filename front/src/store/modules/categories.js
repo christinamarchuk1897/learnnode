@@ -3,6 +3,7 @@ import mutations from '../categories/mutations';
 import actions from '../categories/actions';
 import getters from '../categories/getters';
 const categories = {
+    namespaced: true,
     state: state,
     mutations: mutations,
     actions: actions,

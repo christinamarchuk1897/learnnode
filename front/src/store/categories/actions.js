@@ -4,5 +4,8 @@ export default {
     async fetch({commit, getters}, formData) {
         //const res = await axios.post('/login', formData);
 
+    },
+    async post({commit, getters}, formData) {
+        console.log(formData);
     }
 }
