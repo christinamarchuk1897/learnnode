@@ -6,7 +6,11 @@ import { validationResult } from 'express-validator';
 
 
 class CategoryController {
-    constructor() {};
+
+    protected repo: Repository<Categories>;
+    constructor() {
+        this.repo = connection.getRepository(Categories);
+    };
 
     public async create(req: Request, res: Response):Promise<any>{
         const errors = validationResult(req);
@@ -15,14 +19,14 @@ class CategoryController {
         }
 
         try {
-            const repo: Repository<Categories> = connection.getRepository(Categories);
+
 
             const {
                 categoryName,
                 categoryDescr
             } = req.body;
 
-            const category = await repo.findOne( { where:
+            const category = await this.repo.findOne( { where:
                 { category_name: Like(`%${categoryName}%`) }
             });
 
@@ -34,7 +38,7 @@ class CategoryController {
                     categoryName,
                     categoryDescr
                 };
-                const newCategory = await repo.create({
+                const newCategory = await this.repo.create({
                     category_name: requestData.categoryName,
                     category_descr: requestData.categoryDescr
                 });
@@ -51,6 +55,15 @@ class CategoryController {
             }
         } catch (err) {
             throw new Error(err);
+        }
+    }
+
+    public async index(req: Request, res: Response):Promise<any> {
+        const result = await this.repo.find();
+        if (result) {
+            return res.status(200).json({data: result})
+        } else {
+            return res.status(404).json({msg: 'No categories'})
         }
     }
 }
