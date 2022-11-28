@@ -9,6 +9,11 @@ const router = express.Router();
 // router.get('/', auth, rolePermission, (req: Request, res: Response, next: NextFunction) => {
 //     return res.send({msg: 'it works!'});
 // });
-router.post('/create', auth, rolePermission, check('categoryName').isLength({min: 2}), check('categoryDescr').isLength({min: 10}), CategoryController.create);
+router.post('/create',
+            auth,
+            rolePermission,
+            check('categoryName').isLength({min: 2}),
+            check('categoryDescr').isLength({min: 10}),
+            CategoryController.create);
 
 export = router;
