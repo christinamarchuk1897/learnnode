@@ -32,7 +32,7 @@
     },
     methods: {
       formData(data) {
-        console.log(data);
+
       }
     }
   }
