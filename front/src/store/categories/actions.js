@@ -6,6 +6,6 @@ export default {
 
     },
     async post({commit, getters}, formData) {
-        console.log(formData);
+        console.log(formData, 'form data');
     }
 }

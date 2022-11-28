@@ -33,8 +33,7 @@
     methods: {
       formData(data) {
         if (data) {
-          console.log(this.$store)
-        //  this.$store.dispatch('categories/post', data)
+          this.$store.dispatch('categories/post', data)
         }
       }
     }

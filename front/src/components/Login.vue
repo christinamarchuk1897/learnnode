@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         async login() {
-            await this.$store.dispatch('login', this.form)
+            await this.$store.dispatch('user/login', this.form)
         }
     }
 }

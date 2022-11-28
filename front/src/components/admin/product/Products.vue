@@ -9,16 +9,14 @@
     </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
 export default {
     async mounted() {
         await this.axios.get('/products')
     },
 
     computed: {
-        ...mapGetters(['getUser']),
         user() {
-            return this.$store.getters['getUser'];
+            return this.$store.getters['user/getUser'];
         }
     },
 
