@@ -32,7 +32,7 @@
     </div>
   </div> -->
   <div>
-    <base-form :form="form"></base-form>
+    <base-form :form="form" @formData="formData"></base-form>
   </div>
 </template>
 <script>
@@ -86,6 +86,11 @@ export default {
           model: 'currency'
         }
       ]
+    }
+  },
+  methods: {
+    formData(data) {
+      console.log(data);
     }
   }
 }
