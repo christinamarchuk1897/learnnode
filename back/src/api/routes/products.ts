@@ -14,8 +14,11 @@ const router = express.Router();
 router.get('/create',
            auth,
            rolePermission,
-        //    check('categoryName').isLength({min: 2}),
-        //    check('categoryDescr').isLength({min: 10}),
+           check('productName').isLength({min: 2}),
+           check('productDescr').isLength({min: 10}),
+           check('productCategory').isNumeric(),
+           check('productPrice').isNumeric(),
+           check('currency').isNumeric(),
            ProductController.create);
 
 export = router;

@@ -17,14 +17,18 @@ class CategoryController {
         try {
             const repo: Repository<Products> = connection.getRepository(Products);
 
-            // const {
-            //     categoryName,
-            //     categoryDescr
-            // } = req.body;
+            const {
+                productName,
+                productDescr,
+                productCategory,
+                productPrice,
+                currency
+            } = req.body;
 
-            // const category = await repo.findOne( { where:
-            //     { category_name: Like(`%${categoryName}%`) }
-            // });
+            const product = await repo.findOne( { where:
+                { product_name: Like(`%${productName}%`) }
+            });
+
 
             // if (!category) {
             //     const requestData: {
