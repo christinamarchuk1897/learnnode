@@ -7,9 +7,9 @@ import { validationResult } from 'express-validator';
 
 class CategoryController {
 
-    protected repo: Repository<Categories>;
-    constructor() {
-        this.repo = connection.getRepository(Categories);
+    public repo: Repository<Categories>;
+    constructor(repo: Repository<Categories>) {
+        this.repo = repo;
     };
 
     public async create(req: Request, res: Response):Promise<any>{
@@ -67,4 +67,4 @@ class CategoryController {
         }
     }
 }
-export default new CategoryController();
+export default new CategoryController(connection.getRepository(Categories));
