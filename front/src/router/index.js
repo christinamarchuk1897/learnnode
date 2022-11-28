@@ -10,7 +10,6 @@ import AdminCategories from '../components/admin/categories/Categories.vue'
 import CreateCategory from '../components/admin/categories/Create.vue'
 
 const rolePermission = localStorage.getItem('user') && JSON.parse(localStorage.getItem('user')).default_role == 'ADMIN'
-console.log()
 const routes = [
     // { path: '/', component: App },
     { path: '/login', component: Login, name: "login" },
@@ -29,7 +28,6 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    console.log(to);
     if (to.meta['admin'] && JSON.parse(localStorage.getItem('user')).default_role !== "ADMIN") {
         next({
             name: 'home'
