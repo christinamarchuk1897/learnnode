@@ -16,11 +16,11 @@ export default {
     props: {
         form: {
             type: Array,
-            default: []
+            default: () => []
         }
     },
     mounted() {
-
+        console.log(this.form)
     }
 }
 </script>

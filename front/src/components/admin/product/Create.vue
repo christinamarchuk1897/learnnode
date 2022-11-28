@@ -37,7 +37,7 @@
 </template>
 <script>
 import BaseForm from '@/components/forms/BaseForm.vue';
-import BaseForm from '../../forms/BaseForm.vue';
+// import BaseForm from '../../forms/BaseForm.vue';
 export default {
   components: {
     BaseForm
