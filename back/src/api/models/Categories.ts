@@ -7,9 +7,6 @@ export default class Categories extends BaseEntity {
     id: number
 
     @Column()
-    first_name: string;
-
-    @Column()
     category_name: string;
 
     @Column()
