@@ -18,6 +18,9 @@ export default {
             type: Array,
             default: []
         }
+    },
+    mounted() {
+
     }
 }
 </script>

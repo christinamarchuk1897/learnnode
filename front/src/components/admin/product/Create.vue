@@ -1,8 +1,8 @@
 <template>
-  <div class="form">
+  <!-- <div class="form">
     <div class="form-group">
-      <label for="exampleInputEmail1">Product name</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter product name">
+      <label for="product">Product name</label>
+      <input type="text" class="form-control" id="product" placeholder="Enter product name">
     </div>
     <div class="form-group">
       <label for="productdescr">Product description</label>
@@ -17,8 +17,8 @@
       <select class="custom-select" id="currency">
         <option selected>Open this select menu</option>
         <option value="1">$</option>
-        <!-- <option value="2">Two</option>
-        <option value="3">Three</option> -->
+        <option value="2">Two</option>
+        <option value="3">Three</option>
       </select>
     </div>
     <div class="form-group select">
@@ -30,5 +30,63 @@
         <option value="3">Three</option>
       </select>
     </div>
+  </div> -->
+  <div>
+    <base-form :form="form"></base-form>
   </div>
 </template>
+<script>
+import BaseForm from '@/components/forms/BaseForm.vue';
+import BaseForm from '../../forms/BaseForm.vue';
+export default {
+  components: {
+    BaseForm
+  },
+
+  data() {
+    return {
+      form: [
+        {
+          type: 'input',
+          id: 'name',
+          for: 'text',
+          label: 'Product name',
+          model: 'productName'
+        },
+        {
+          type: 'input',
+          for: 'text',
+          id: 'descr',
+          label: 'Product description',
+          model: 'productDescr'
+        },
+        {
+          type: 'number',
+          id: 'price',
+          label: 'Product Price',
+          model: 'productPrice'
+        },
+        {
+          type: 'select',
+          options: [
+            'one',
+            'two'
+          ],
+          id: 'category',
+          label: 'Product Category',
+          model: 'productCategory'
+        },
+        {
+          type: 'select',
+          options: [
+            '$',
+          ],
+          id: 'currency',
+          label: 'Currency',
+          model: 'currency'
+        }
+      ]
+    }
+  }
+}
+</script>
