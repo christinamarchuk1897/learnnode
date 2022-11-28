@@ -3,6 +3,7 @@ import express, {Express} from 'express';
 import cors from 'cors';
 import connection from './db_connection';
 import products from './src/api/routes/products';
+import categories from './src/api/routes/categories';
 import register from './src/api/routes/register';
 import login from './src/api/routes/login';
 import dotenv from 'dotenv';
@@ -33,6 +34,7 @@ class App {
         this.app.use(express.json());
         this.app.use(cors());
         this.app.use('/products', products);
+        this.app.use('/categories', categories);
         this.app.use('/register', register)
         this.app.use('/login', login)
     }
