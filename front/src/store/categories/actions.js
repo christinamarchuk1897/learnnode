@@ -6,6 +6,6 @@ export default {
 
     },
     async post({commit, getters}, formData) {
-        console.log(formData, 'form data');
+        const result = await axios.post('/categories/create', formData);
     }
 }
