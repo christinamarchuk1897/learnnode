@@ -9,7 +9,7 @@
 
         <div v-for="(category) in categories" :key="category.id">
             <span>{{category.id}}</span>
-            <span>{{category.name}}</span>
+            <span>{{category.category_name}}</span>
         </div>
     </div>
 </template>
@@ -19,18 +19,18 @@
 export default {
     computed: {
         categories() {
-            console.log(this.$store.getters['categories/getAllCategories'])
+            console.log(this.$store.getters['categories/getAllCategories'], 'computed')
             return this.$store.getters['categories/getAllCategories']
         }
     },
-    mounted() {
+    beforeMount() {
         this.$store.dispatch('categories/fetch');
     },
 
     watch: {
         categories: {
             handler(data) {
-                console.log(data)
+                console.log(data, 'watch')
             },
             deep: true
         }

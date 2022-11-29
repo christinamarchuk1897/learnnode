@@ -3,8 +3,9 @@ import router from "./../../router/index";
 export default {
     async fetch({commit}) {
         const res = await axios.get('/categories');
+        console.log('act')
         if (res.data.data.length) {
-            commit('setCategories', res.data.data)
+           await  commit('setCategories', res.data.data)
         }
     },
     async post({commit, getters}, formData) {
