@@ -19,7 +19,6 @@
 export default {
     computed: {
         categories() {
-            console.log(this.$store.getters['categories/getAllCategories'], 'computed')
             return this.$store.getters['categories/getAllCategories']
         }
     },
@@ -30,7 +29,7 @@ export default {
     watch: {
         categories: {
             handler(data) {
-                console.log(data, 'watch')
+
             },
             deep: true
         }
