@@ -30,9 +30,22 @@ export default {
             }
         }
     },
+    computed: {
+        user() {
+           return this.$store.getters['user/getUser']
+        }
+    },
+    watch: {
+        user: {
+            handler(user) {
+                console.log(user)
+            },
+            deep: true
+        }
+    },
     methods: {
         async login() {
-            await this.$store.dispatch('user/login', this.form)
+           await this.$store.dispatch('user/login', this.form)
         }
     }
 }

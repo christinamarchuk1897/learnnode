@@ -10,6 +10,9 @@
 </template>
 <script>
 export default {
+    data() {
+        return {}
+    },
     async mounted() {
         await this.axios.get('/products')
     },

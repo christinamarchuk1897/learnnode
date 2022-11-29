@@ -27,6 +27,8 @@ axios.interceptors.request.use(
 
 Vue.use(VueAxios, axios)
 
+Vue.prototype.$store = store;
+// Vue.prototype.$store = store;
 new Vue({
   router,
   store,
