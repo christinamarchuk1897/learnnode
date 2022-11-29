@@ -15,21 +15,32 @@
 </template>
 
 <script>
+import user from '@/store/modules/user';
+
 
 export default {
     computed: {
         categories() {
-            return this.$store.getters['categories/getAllCategories']
+            return this.$store.getters['categories/getAllCategories'];
+        },
+        user() {
+           return this.$store.getters['user/getUser']
         }
     },
-    beforeMount() {
+    mounted() {
         this.$store.dispatch('categories/fetch');
     },
 
     watch: {
         categories: {
             handler(data) {
-
+                console.log(data)
+            },
+            deep: true
+        },
+        user: {
+            handler(data) {
+                console.log(data)
             },
             deep: true
         }
