@@ -1,0 +1,82 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+
+$color: #140f07;
+$color-2:#132c53;
+$color-3:#4661b5;
+$color-4:#90a1fb;
+$color-5:#f4eaf5;
+
+.color1 {color: #120907;}
+.color2 {color: #19203c;}
+.color3 {color: #4e5f95;}
+.color4 {color: #84a0e5;}
+.color5 {color: #b7dfeb;}
+
+.color1 {color: #d9d8ff;}
+.color2 {color: #ffffff;}
+.color3 {color: #161934;}
+.color4 {color: #77767c;}
+.color5 {color: #e2e2e2;}
+
+* {box-sizing: border-box}
+
+body {
+    margin: 0 auto;
+    background-color: #e2e2e2;
+}
+
+h1, h2, h3, h4, h5, p, span, section, div, a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+
+.container {
+    max-width: 50%;
+    margin: 0  auto;
+}
+
+.error {
+  p {
+    color: red;
+  }
+}
+
+button {
+  background-color: #4e5f95;
+  color: #f4eaf5;
+  padding: 15px;
+  border-radius: 8px !important;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px !important;
+}
+
+
+
+a {
+  color: #e2e2e2 !important;
+  text-decoration: none !important;
+}
+
+.registerbtn {
+  margin-top: 20px;
+}
+
+.signin {
+  margin-top: 40px;
+}
+
+.container {
+  margin-left: 300px !important;
+  padding: 0 !important;
+}
